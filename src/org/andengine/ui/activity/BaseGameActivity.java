@@ -406,7 +406,7 @@ public abstract class BaseGameActivity extends BaseActivity implements IGameInte
 
 	private void acquireWakeLock(final WakeLockOptions pWakeLockOptions) {
 		if (pWakeLockOptions == WakeLockOptions.SCREEN_ON) {
-			ActivityUtils.keepScreenOn(this);
+//			ActivityUtils.keepScreenOn(this);
 		} else {
 			final PowerManager pm = (PowerManager) this.getSystemService(Context.POWER_SERVICE);
 			this.mWakeLock = pm.newWakeLock(pWakeLockOptions.getFlag() | PowerManager.ON_AFTER_RELEASE, Constants.DEBUGTAG);
