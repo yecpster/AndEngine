@@ -10,6 +10,7 @@ import org.andengine.opengl.texture.TextureManager;
 import org.andengine.opengl.texture.TextureOptions;
 import org.andengine.opengl.util.GLState;
 import org.andengine.util.StreamUtils;
+import org.andengine.util.adt.io.in.ActivityLocalInputStreamOpener;
 import org.andengine.util.adt.io.in.IInputStreamOpener;
 import org.andengine.util.exception.NullBitmapException;
 import org.andengine.util.math.MathUtils;
@@ -108,6 +109,10 @@ public class BitmapTexture extends Texture {
         final Bitmap bitmap = this.onGetBitmap(bitmapConfig);
 
         if (bitmap == null) {
+            if (mInputStreamOpener instanceof ActivityLocalInputStreamOpener) {
+                final ActivityLocalInputStreamOpener activityInputStreamOpener = (ActivityLocalInputStreamOpener) mInputStreamOpener;
+                activityInputStreamOpener.delete();
+            }
             throw new NullBitmapException("Caused by: '" + this.toString() + "'.");
         }
 
