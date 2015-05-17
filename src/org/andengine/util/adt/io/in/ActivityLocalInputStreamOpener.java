@@ -22,4 +22,8 @@ public class ActivityLocalInputStreamOpener implements IInputStreamOpener {
     public void delete() throws IOException {
         activity.deleteFile(localUrl);
     }
+
+    public String getLocalUrl() {
+        return localUrl;
+    }
 }

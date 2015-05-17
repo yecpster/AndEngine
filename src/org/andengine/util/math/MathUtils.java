@@ -386,7 +386,7 @@ public final class MathUtils {
 	}
 
 	public static final boolean isOdd(final int n) {
-		return (n % 2) == 1;
+		return (n % 2) != 0;
 	}
 
 	public static float dot(final float pXA, final float pYA, final float pXB, final float pYB) {

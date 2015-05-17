@@ -11,56 +11,77 @@ import android.content.res.AssetManager;
 
 /**
  * (c) 2012 Zynga Inc.
- *
+ * 
  * @author Nicolas Gramlich <ngramlich@zynga.com>
  * @since 10:45:48 - 02.03.2012
  */
 public class AssetBitmapTexture extends BitmapTexture {
-	// ===========================================================
-	// Constants
-	// ===========================================================
+    // ===========================================================
+    // Constants
+    // ===========================================================
 
-	// ===========================================================
-	// Fields
-	// ===========================================================
+    // ===========================================================
+    // Fields
+    private String pAssetPath;
 
-	// ===========================================================
-	// Constructors
-	// ===========================================================
+    // ===========================================================
 
-	public AssetBitmapTexture(final TextureManager pTextureManager, final AssetManager pAssetManager, final String pAssetPath) throws IOException {
-		super(pTextureManager, new AssetInputStreamOpener(pAssetManager, pAssetPath));
-	}
+    // ===========================================================
+    // Constructors
+    // ===========================================================
 
-	public AssetBitmapTexture(final TextureManager pTextureManager, final AssetManager pAssetManager, final String pAssetPath, final BitmapTextureFormat pBitmapTextureFormat) throws IOException {
-		super(pTextureManager, new AssetInputStreamOpener(pAssetManager, pAssetPath), pBitmapTextureFormat);
-	}
+    public AssetBitmapTexture(final TextureManager pTextureManager, final AssetManager pAssetManager, final String pAssetPath) throws IOException {
+        super(pTextureManager, new AssetInputStreamOpener(pAssetManager, pAssetPath));
+        this.pAssetPath = pAssetPath;
+    }
 
-	public AssetBitmapTexture(final TextureManager pTextureManager, final AssetManager pAssetManager, final String pAssetPath, final TextureOptions pTextureOptions) throws IOException {
-		super(pTextureManager, new AssetInputStreamOpener(pAssetManager, pAssetPath), pTextureOptions);
-	}
+    public AssetBitmapTexture(final TextureManager pTextureManager, final AssetManager pAssetManager, final String pAssetPath,
+            final BitmapTextureFormat pBitmapTextureFormat) throws IOException {
+        super(pTextureManager, new AssetInputStreamOpener(pAssetManager, pAssetPath), pBitmapTextureFormat);
+        this.pAssetPath = pAssetPath;
+    }
 
-	public AssetBitmapTexture(final TextureManager pTextureManager, final AssetManager pAssetManager, final String pAssetPath, final BitmapTextureFormat pBitmapTextureFormat, final TextureOptions pTextureOptions) throws IOException {
-		super(pTextureManager, new AssetInputStreamOpener(pAssetManager, pAssetPath), pBitmapTextureFormat, pTextureOptions);
-	}
+    public AssetBitmapTexture(final TextureManager pTextureManager, final AssetManager pAssetManager, final String pAssetPath,
+            final TextureOptions pTextureOptions) throws IOException {
+        super(pTextureManager, new AssetInputStreamOpener(pAssetManager, pAssetPath), pTextureOptions);
+        this.pAssetPath = pAssetPath;
+    }
 
-	public AssetBitmapTexture(final TextureManager pTextureManager, final AssetManager pAssetManager, final String pAssetPath, final BitmapTextureFormat pBitmapTextureFormat, final TextureOptions pTextureOptions, final ITextureStateListener pTextureStateListener) throws IOException {
-		super(pTextureManager, new AssetInputStreamOpener(pAssetManager, pAssetPath), pBitmapTextureFormat, pTextureOptions, pTextureStateListener);
-	}
+    public AssetBitmapTexture(final TextureManager pTextureManager, final AssetManager pAssetManager, final String pAssetPath,
+            final BitmapTextureFormat pBitmapTextureFormat, final TextureOptions pTextureOptions) throws IOException {
+        super(pTextureManager, new AssetInputStreamOpener(pAssetManager, pAssetPath), pBitmapTextureFormat, pTextureOptions);
+        this.pAssetPath = pAssetPath;
+    }
 
-	// ===========================================================
-	// Getter & Setter
-	// ===========================================================
+    public AssetBitmapTexture(final TextureManager pTextureManager, final AssetManager pAssetManager, final String pAssetPath,
+            final BitmapTextureFormat pBitmapTextureFormat, final TextureOptions pTextureOptions, final ITextureStateListener pTextureStateListener)
+            throws IOException {
+        super(pTextureManager, new AssetInputStreamOpener(pAssetManager, pAssetPath), pBitmapTextureFormat, pTextureOptions, pTextureStateListener);
+        this.pAssetPath = pAssetPath;
+    }
 
-	// ===========================================================
-	// Methods for/from SuperClass/Interfaces
-	// ===========================================================
+    public String getpAssetPath() {
+        return pAssetPath;
+    }
 
-	// ===========================================================
-	// Methods
-	// ===========================================================
+    public void setpAssetPath(final String pAssetPath) {
+        this.pAssetPath = pAssetPath;
+    }
 
-	// ===========================================================
-	// Inner and Anonymous Classes
-	// ===========================================================
+    // ===========================================================
+    // Getter & Setter
+
+    // ===========================================================
+
+    // ===========================================================
+    // Methods for/from SuperClass/Interfaces
+    // ===========================================================
+
+    // ===========================================================
+    // Methods
+    // ===========================================================
+
+    // ===========================================================
+    // Inner and Anonymous Classes
+    // ===========================================================
 }

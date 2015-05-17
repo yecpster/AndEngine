@@ -411,12 +411,10 @@ public abstract class BaseMenuItemDecorator implements IMenuItem {
 
 	@Override
 	public void setAnchorCenterX(final float pAnchorCenterX) {
-		this.setAnchorCenterX(pAnchorCenterX);
 	}
 
 	@Override
 	public void setAnchorCenterY(final float pAnchorCenterY) {
-		this.setAnchorCenterY(pAnchorCenterY);
 	}
 
 	@Override
@@ -685,7 +683,8 @@ public abstract class BaseMenuItemDecorator implements IMenuItem {
 		return this.mMenuItem.getChildByTag(pTag);
 	}
 
-	public IEntity getChildByIndex(final int pIndex) {
+	@Override
+    public IEntity getChildByIndex(final int pIndex) {
 		return this.mMenuItem.getChildByIndex(pIndex);
 	}
 

@@ -109,6 +109,10 @@ public class EngineRenderer implements GLSurfaceView.Renderer {
 		}
 	}
 
+    public GLState getGLState() {
+        return mGLState;
+    }
+
 	// ===========================================================
 	// Methods
 	// ===========================================================

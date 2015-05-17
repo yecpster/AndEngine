@@ -34,6 +34,7 @@ public class BitmapTexture extends Texture {
 
     // ===========================================================
     // Fields
+    private String path;
     // ===========================================================
 
     private final int mWidth;
@@ -47,6 +48,10 @@ public class BitmapTexture extends Texture {
 
     public BitmapTexture(final TextureManager pTextureManager, final IInputStreamOpener pInputStreamOpener) throws IOException {
         this(pTextureManager, pInputStreamOpener, BitmapTextureFormat.RGBA_8888, TextureOptions.DEFAULT, null);
+        if (pInputStreamOpener instanceof ActivityLocalInputStreamOpener) {
+            final ActivityLocalInputStreamOpener activityLocalInputStreamOpener = (ActivityLocalInputStreamOpener) pInputStreamOpener;
+            this.path = activityLocalInputStreamOpener.getLocalUrl();
+        }
     }
 
     public BitmapTexture(final TextureManager pTextureManager, final IInputStreamOpener pInputStreamOpener, final BitmapTextureFormat pBitmapTextureFormat)
@@ -102,6 +107,14 @@ public class BitmapTexture extends Texture {
     // ===========================================================
     // Methods for/from SuperClass/Interfaces
     // ===========================================================
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(final String path) {
+        this.path = path;
+    }
 
     @Override
     protected void writeTextureToHardware(final GLState pGLState) throws IOException {

@@ -203,15 +203,11 @@ public class Transformation {
 		final float b = this.b;
 		final float c = this.c;
 		final float d = this.d;
-		final float tx = this.tx;
-		final float ty = this.ty;
 
 		this.a = a + tanY * c;
 		this.b = b + tanY * d;
 		this.c = tanX * a + c;
 		this.d = tanX * b + d;
-		this.tx = tx;
-		this.ty = ty;
 	}
 
 	public final void postSkew(final float pSkewX, final float pSkewY) {

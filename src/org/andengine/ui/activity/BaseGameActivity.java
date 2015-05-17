@@ -527,6 +527,10 @@ public abstract class BaseGameActivity extends BaseActivity implements IGameInte
 		return this.mEngine.disableOrientationSensor(this);
 	}
 
+    public RenderSurfaceView getRenderSurfaceView() {
+        return mRenderSurfaceView;
+    }
+
 	// ===========================================================
 	// Inner and Anonymous Classes
 	// ===========================================================
