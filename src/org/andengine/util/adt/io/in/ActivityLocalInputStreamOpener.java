@@ -26,4 +26,6 @@ public class ActivityLocalInputStreamOpener implements IInputStreamOpener {
     public String getLocalUrl() {
         return localUrl;
     }
+
+
 }
