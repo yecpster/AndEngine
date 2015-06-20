@@ -1,8 +1,8 @@
 package org.andengine.entity;
 
+import android.annotation.SuppressLint;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.engine.handler.UpdateHandlerList;
@@ -26,6 +26,7 @@ import org.andengine.util.call.ParameterCallable;
  * @author Nicolas Gramlich
  * @since 12:00:48 - 08.03.2010
  */
+@SuppressLint("WrongCall")
 public class Entity implements IEntity {
     // ===========================================================
     // Constants

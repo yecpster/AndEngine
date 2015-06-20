@@ -11,8 +11,9 @@ import org.andengine.entity.particle.initializer.IParticleInitializer;
 import org.andengine.entity.particle.modifier.IParticleModifier;
 import org.andengine.opengl.util.GLState;
 import org.andengine.util.Constants;
-import org.andengine.util.adt.array.ArrayUtils;
 import org.andengine.util.math.MathUtils;
+
+import android.annotation.SuppressLint;
 
 /**
  * (c) 2010 Nicolas Gramlich
@@ -21,6 +22,7 @@ import org.andengine.util.math.MathUtils;
  * @author Nicolas Gramlich
  * @since 19:42:27 - 14.03.2010
  */
+@SuppressLint("WrongCall")
 public class ParticleSystem<T extends IEntity> extends Entity {
 	// ===========================================================
 	// Constants
@@ -63,7 +65,7 @@ public class ParticleSystem<T extends IEntity> extends Entity {
 
 		this.mEntityFactory = pEntityFactory;
 		this.mParticleEmitter = pParticleEmitter;
-		this.mParticles = (Particle<T>[]) new Particle[pParticlesMaximum];
+		this.mParticles = new Particle[pParticlesMaximum];
 		this.mRateMinimum = pRateMinimum;
 		this.mRateMaximum = pRateMaximum;
 		this.mParticlesMaximum = pParticlesMaximum;

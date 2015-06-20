@@ -1,8 +1,8 @@
 package org.andengine.entity.scene.menu.item.decorator;
 
+import android.annotation.SuppressLint;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.entity.IEntity;
@@ -29,6 +29,7 @@ import org.andengine.util.adt.transformation.Transformation;
  * @author Nicolas Gramlich
  * @since 15:05:44 - 18.11.2010
  */
+@SuppressLint("WrongCall")
 public abstract class BaseMenuItemDecorator implements IMenuItem {
 	// ===========================================================
 	// Constants

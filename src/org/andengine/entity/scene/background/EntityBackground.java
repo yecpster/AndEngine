@@ -1,5 +1,6 @@
 package org.andengine.entity.scene.background;
 
+import android.annotation.SuppressLint;
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.IEntity;
 import org.andengine.opengl.util.GLState;
@@ -11,6 +12,7 @@ import org.andengine.opengl.util.GLState;
  * @author Nicolas Gramlich
  * @since 18:25:10 - 21.07.2010
  */
+@SuppressLint("WrongCall")
 public class EntityBackground extends Background {
 	// ===========================================================
 	// Constants

@@ -1,7 +1,7 @@
 package org.andengine.entity.scene.background;
 
+import android.annotation.SuppressLint;
 import java.util.ArrayList;
-
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.IEntity;
 import org.andengine.opengl.util.GLState;
@@ -14,6 +14,7 @@ import org.andengine.util.debug.Debug;
  * @author Nicolas Gramlich
  * @since 15:36:26 - 19.07.2010
  */
+@SuppressLint("WrongCall")
 public class ParallaxBackground extends Background {
 	// ===========================================================
 	// Constants

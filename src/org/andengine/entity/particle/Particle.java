@@ -1,5 +1,6 @@
 package org.andengine.entity.particle;
 
+import android.annotation.SuppressLint;
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.handler.physics.PhysicsHandler;
 import org.andengine.entity.IEntity;
@@ -12,6 +13,7 @@ import org.andengine.opengl.util.GLState;
  * @author Nicolas Gramlich
  * @since 19:37:13 - 14.03.2010
  */
+@SuppressLint("WrongCall")
 public class Particle<T extends IEntity> {
 	// ===========================================================
 	// Constants

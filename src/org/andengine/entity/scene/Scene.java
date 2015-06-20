@@ -13,7 +13,7 @@ import org.andengine.opengl.util.GLState;
 import org.andengine.util.Constants;
 import org.andengine.util.adt.color.Color;
 import org.andengine.util.adt.list.SmartList;
-
+import android.annotation.SuppressLint;
 import android.util.SparseArray;
 
 /**
@@ -22,6 +22,7 @@ import android.util.SparseArray;
  * @author Nicolas Gramlich
  * @since 12:47:39 - 08.03.2010
  */
+@SuppressLint("WrongCall")
 public class Scene extends Entity {
     // ===========================================================
     // Constants

@@ -1,5 +1,6 @@
 package org.andengine.entity.particle;
 
+import android.annotation.SuppressLint;
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.IEntityFactory;
 import org.andengine.entity.particle.emitter.IParticleEmitter;
@@ -17,6 +18,7 @@ import org.andengine.util.adt.color.ColorUtils;
  * @author Nicolas Gramlich <ngramlich@zynga.com>
  * @since 18:32:29 - 09.05.2012
  */
+@SuppressLint("WrongCall")
 public class BatchedSpriteParticleSystem extends BlendFunctionParticleSystem<UncoloredSprite> {
 	// ===========================================================
 	// Constants

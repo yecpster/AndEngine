@@ -1,5 +1,6 @@
 package org.andengine.engine.camera;
 
+import android.annotation.SuppressLint;
 import org.andengine.engine.camera.hud.HUD;
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.engine.handler.UpdateHandlerList;
@@ -19,6 +20,7 @@ import org.andengine.util.math.MathUtils;
  * @author Nicolas Gramlich
  * @since 10:24:18 - 25.03.2010
  */
+@SuppressLint("WrongCall")
 public class Camera implements IUpdateHandler {
 	// ===========================================================
 	// Constants

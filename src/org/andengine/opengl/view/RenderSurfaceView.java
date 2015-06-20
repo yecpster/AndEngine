@@ -3,7 +3,7 @@ package org.andengine.opengl.view;
 import org.andengine.engine.Engine;
 import org.andengine.engine.options.ConfigChooserOptions;
 import org.andengine.engine.options.resolutionpolicy.IResolutionPolicy;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.opengl.GLSurfaceView;
 import android.util.AttributeSet;
@@ -14,6 +14,7 @@ import android.util.AttributeSet;
  * @author Nicolas Gramlich
  * @since 11:57:29 - 08.03.2010
  */
+@SuppressLint("WrongCall")
 public class RenderSurfaceView extends GLSurfaceView implements IResolutionPolicy.Callback {
     // ===========================================================
     // Constants

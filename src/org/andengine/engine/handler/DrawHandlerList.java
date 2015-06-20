@@ -1,5 +1,6 @@
 package org.andengine.engine.handler;
 
+import android.annotation.SuppressLint;
 import org.andengine.engine.camera.Camera;
 import org.andengine.opengl.util.GLState;
 import org.andengine.util.adt.list.SmartList;
@@ -10,6 +11,7 @@ import org.andengine.util.adt.list.SmartList;
  * @author Nicolas Gramlich <ngramlich@zynga.com>
  * @since 17:42:49 - 22.11.2011
  */
+@SuppressLint("WrongCall")
 public class DrawHandlerList extends SmartList<IDrawHandler> implements IDrawHandler {
 	// ===========================================================
 	// Constants

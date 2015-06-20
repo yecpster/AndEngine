@@ -5,7 +5,7 @@ import org.andengine.engine.camera.Camera;
 import org.andengine.engine.options.EngineOptions;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.util.GLState;
-
+import android.annotation.SuppressLint;
 import android.opengl.GLES20;
 
 /**
@@ -15,6 +15,7 @@ import android.opengl.GLES20;
  * @author Nicolas Gramlich
  * @since 22:28:34 - 27.03.2010
  */
+@SuppressLint("WrongCall")
 public class SingleSceneSplitScreenEngine extends Engine {
 	// ===========================================================
 	// Constants
