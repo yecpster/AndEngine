@@ -87,6 +87,10 @@ public abstract class Texture implements ITexture {
 	public TextureOptions getTextureOptions() {
 		return this.mTextureOptions;
 	}
+	
+	public TextureManager getTextureManager() {
+	    return this.mTextureManager;
+	}
 
 	@Override
 	public int getTextureMemorySize() {

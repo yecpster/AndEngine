@@ -3,11 +3,11 @@ package org.andengine.opengl.font;
 import java.util.ArrayList;
 
 import org.andengine.opengl.font.exception.FontException;
+import org.andengine.opengl.texture.EmptyTexture;
 import org.andengine.opengl.texture.ITexture;
 import org.andengine.opengl.texture.PixelFormat;
 import org.andengine.opengl.util.GLState;
 import org.andengine.util.adt.color.Color;
-import org.andengine.util.adt.map.SparseArrayUtils;
 import org.andengine.util.math.MathUtils;
 
 import android.graphics.Bitmap;
@@ -42,11 +42,12 @@ public class Font implements IFont {
     private final FontManager mFontManager;
 
     private final ITexture mTexture;
-    private final int mTextureWidth;
-    private final int mTextureHeight;
+    private int mTextureWidth;
+    private int mTextureHeight;
     private int mCurrentTextureX = Font.LETTER_TEXTURE_PADDING;
     private int mCurrentTextureY = Font.LETTER_TEXTURE_PADDING;
     private int mCurrentTextureYHeightMax;
+    private boolean reAllocated = false;
 
     private final SparseArray<Letter> mManagedCharacterToLetterMap = new SparseArray<Letter>();
     private final ArrayList<Letter> mLettersPendingToBeDrawnToTexture = new ArrayList<Letter>();
@@ -231,8 +232,9 @@ public class Font implements IFont {
             }
 
             if ((this.mCurrentTextureY + letterHeight) >= textureHeight) {
-                throw new FontException("Not enough space for " + Letter.class.getSimpleName() + ": '" + pCharacter + "' on the "
-                        + this.mTexture.getClass().getSimpleName() + ". Existing Letters: " + SparseArrayUtils.toString(this.mManagedCharacterToLetterMap));
+                reAllocate();
+                // throw new FontException("Not enough space for " + Letter.class.getSimpleName() + ": '" + pCharacter + "' on the "
+                // + this.mTexture.getClass().getSimpleName() + ". Existing Letters: " + SparseArrayUtils.toString(this.mManagedCharacterToLetterMap));
             }
 
             this.mCurrentTextureYHeightMax = Math.max(letterHeight, this.mCurrentTextureYHeightMax);
@@ -250,6 +252,20 @@ public class Font implements IFont {
         }
 
         return letter;
+    }
+
+    private void reAllocate() {
+        reAllocated = true;
+        // Debug.e("reAllocation: " + mTexture.getWidth() + "," + mTexture.getHeight());
+        final EmptyTexture oldTexute = (EmptyTexture) this.mTexture;
+        oldTexute.setWidth(oldTexute.getWidth() * 2);
+        oldTexute.setHeight(oldTexute.getHeight() * 2);
+        this.mTextureWidth = this.mTexture.getWidth();
+        this.mTextureHeight = this.mTexture.getHeight();
+    }
+
+    public boolean isReAllocated() {
+        return reAllocated;
     }
 
     protected void updateTextBounds(final String pCharacterAsString) {

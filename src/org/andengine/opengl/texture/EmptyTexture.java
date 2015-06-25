@@ -21,8 +21,8 @@ public class EmptyTexture extends Texture{
 	// Fields
 	// ===========================================================
 
-	private final int mWidth;
-	private final int mHeight;
+	private  int mWidth;
+	private  int mHeight;
 
 	// ===========================================================
 	// Constructors
@@ -56,7 +56,7 @@ public class EmptyTexture extends Texture{
 		this(pTextureManager, pWidth, pHeight, pPixelFormat, pTextureOptions, (ITextureStateListener) null);
 	}
 
-	public EmptyTexture(final TextureManager pTextureManager, final int pWidth, final int pHeight, final PixelFormat pPixelFormat, final TextureOptions pTextureOptions, final ITextureStateListener pTextureStateListener) {
+    public EmptyTexture(final TextureManager pTextureManager, final int pWidth, final int pHeight, final PixelFormat pPixelFormat, final TextureOptions pTextureOptions, final ITextureStateListener pTextureStateListener) {
 		super(pTextureManager, pPixelFormat, pTextureOptions, pTextureStateListener);
 
 		this.mWidth = pWidth;
@@ -70,12 +70,16 @@ public class EmptyTexture extends Texture{
 	// ===========================================================
 	// Methods for/from SuperClass/Interfaces
 	// ===========================================================
-
+    public void setWidth(final int mWidth) {
+         this.mWidth=mWidth;
+    }
 	@Override
 	public int getWidth() {
 		return this.mWidth;
 	}
-
+	  public void setHeight(final int mHeight) {
+	         this.mHeight=mHeight;
+	    }
 	@Override
 	public int getHeight() {
 		return this.mHeight;
