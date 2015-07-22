@@ -476,13 +476,16 @@ public class Engine implements SensorEventListener, OnTouchListener, ITouchEvent
     // ===========================================================
     // Methods
     // ===========================================================
-
-    public void runOnUpdateThread(final Runnable pRunnable) {
+    public void runOnUpdateThreadNonNested(final Runnable pRunnable) {
         if (Thread.currentThread().equals(mUpdateThread)) {
             pRunnable.run();
         } else {
             this.runOnUpdateThread(pRunnable, true);
         }
+    }
+
+    public void runOnUpdateThread(final Runnable pRunnable) {
+        this.runOnUpdateThread(pRunnable, true);
     }
 
     /**
