@@ -116,6 +116,10 @@ public class Font implements IFont {
         return this.mFontMetrics.descent;
     }
 
+    public SparseArray<Letter> getManagedCharacterToLetterMap() {
+        return mManagedCharacterToLetterMap;
+    }
+
     // ===========================================================
     // Methods for/from SuperClass/Interfaces
     // ===========================================================
